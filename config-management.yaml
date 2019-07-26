@@ -1,0 +1,15 @@
+# config-management.yaml
+
+apiVersion: addons.sigs.k8s.io/v1alpha1
+kind: ConfigManagement
+metadata:
+  name: config-management
+  namespace: config-management-system
+spec:
+  # clusterName is required and must be unique among all managed clusters
+  clusterName: nomos-broken
+  git:
+    syncRepo: git@github.com:juliandkatz/git-sync-test.git
+    # syncBranch: master
+    secretType: none
+    # policyDir: "foo-corp"
